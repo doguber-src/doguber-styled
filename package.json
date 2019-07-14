@@ -1,11 +1,22 @@
 {
     "name": "doguber-styled",
-    "version": "0.1.0",
+    "version": "1.3.0",
+    "main": "src/index.js",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/doguber-src/doguber-styled"
+    },
     "dependencies": {
       "classnames": "^2.2.6",
       "prop-types": "^15.7.2",
       "react-transition-group": "^2.3.1",
       "styled-components": "^4.3.2"
+    },
+    "peerDependencies": {
+      "classnames": "^2.x",
+      "prop-types": "^15.x",
+      "react-transition-group": "^2.x",
+      "styled-components": "^4.x"
     }
   }
   
