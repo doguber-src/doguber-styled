@@ -1,18 +1,28 @@
 {
     "name": "doguber-styled",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "main": "src/index.js",
     "repository": {
       "type": "git",
       "url": "https://github.com/doguber-src/doguber-styled"
     },
     "dependencies": {
+      "react": "^16.8.6",
+      "react-scripts": "3.0.1",
       "classnames": "^2.2.6",
       "prop-types": "^15.7.2",
       "react-transition-group": "^2.3.1",
       "styled-components": "^4.3.2"
     },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
+    },
     "peerDependencies": {
+      "react": "^16.x",
+      "react-scripts": "3.x",
       "classnames": "^2.x",
       "prop-types": "^15.x",
       "react-transition-group": "^2.x",
