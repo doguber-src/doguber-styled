@@ -62,78 +62,76 @@ const getColumnSizeClass = (isDesktop, colWidth, colSize) => {
   return isDesktop ? `Col${colSize}` : `Col${colSize}${colWidth === 'sm' && 'Sm'}`;
 };
 
-class Col extends Component {
-  render() {
-    const {
-      className,
-      offset,
-      widths,
-      ...attributes
-    } = this.props;
-    let colClasses;
-    let colOffset;
+const Col = (props) => {
+  const {
+    className,
+    offset,
+    widths,
+    ...attributes
+  } = props;
+  let colClasses;
+  let colOffset;
 
-    widths.forEach((colWidth, i) => {
-      const columnProp = props[colWidth];
+  widths.forEach((colWidth, i) => {
+    const columnProp = props[colWidth];
 
-      delete attributes[colWidth];
+    delete attributes[colWidth];
 
-      if (!columnProp && columnProp !== '') {
-        return;
-      }
-
-      const isDesktop = !i;
-
-      if (offset) {
-        const colSizeInterfix = isDesktop ? '' : `${colWidth}`;
-        const colClass = getColumnSizeClass(isDesktop, colWidth, columnProp);
-        const colOff = `${colSizeInterfix}${offset}`;
-        colClasses = colClass;
-        colOffset = colOff;
-      } else {
-        const colClass = getColumnSizeClass(isDesktop, colWidth, columnProp);
-        colClasses = colClass;
-      }
-    });
-
-    if (!colClasses) {
-      colClasses = 'Col';
+    if (!columnProp && columnProp !== '') {
+      return;
     }
 
-    const classes = classNames(
-      className,
-      colClasses
-    );
+    const isDesktop = !i;
 
-    switch (classes) {
-      case 'Col1': return <Col1 {...attributes} className={classes} offset={colOffset} />;
-      case 'Col2': return <Col2 {...attributes} className={classes} offset={colOffset} />;
-      case 'Col3': return <Col3 {...attributes} className={classes} offset={colOffset} />;
-      case 'Col4': return <Col4 {...attributes} className={classes} offset={colOffset} />;
-      case 'Col5': return <Col5 {...attributes} className={classes} offset={colOffset} />;
-      case 'Col6': return <Col6 {...attributes} className={classes} offset={colOffset} />;
-      case 'Col7': return <Col7 {...attributes} className={classes} offset={colOffset} />;
-      case 'Col8': return <Col8 {...attributes} className={classes} offset={colOffset} />;
-      case 'Col9': return <Col9 {...attributes} className={classes} offset={colOffset} />;
-      case 'Col10': return <Col10 {...attributes} className={classes} offset={colOffset} />;
-      case 'Col11': return <Col11 {...attributes} className={classes} offset={colOffset} />;
-      case 'Col12': return <Col12 {...attributes} className={classes} offset={colOffset} />;
-      case 'Col1Sm': return <Col1Sm {...attributes} className={classes} offset={colOffset} />;
-      case 'Col2Sm': return <Col2Sm {...attributes} className={classes} offset={colOffset} />;
-      case 'Col3Sm': return <Col3Sm {...attributes} className={classes} offset={colOffset} />;
-      case 'Col4Sm': return <Col4Sm {...attributes} className={classes} offset={colOffset} />;
-      case 'Col5Sm': return <Col5Sm {...attributes} className={classes} offset={colOffset} />;
-      case 'Col6Sm': return <Col6Sm {...attributes} className={classes} offset={colOffset} />;
-      case 'Col7Sm': return <Col7Sm {...attributes} className={classes} offset={colOffset} />;
-      case 'Col8Sm': return <Col8Sm {...attributes} className={classes} offset={colOffset} />;
-      case 'Col9Sm': return <Col9Sm {...attributes} className={classes} offset={colOffset} />;
-      case 'Col10Sm': return <Col10Sm {...attributes} className={classes} offset={colOffset} />;
-      case 'Col11Sm': return <Col11Sm {...attributes} className={classes} offset={colOffset} />;
-      case 'Col12Sm': return <Col12Sm {...attributes} className={classes} offset={colOffset} />;
-      default: return <Col1 {...attributes} className={classes} offset={colOffset} />;
+    if (offset) {
+      const colSizeInterfix = isDesktop ? '' : `${colWidth}`;
+      const colClass = getColumnSizeClass(isDesktop, colWidth, columnProp);
+      const colOff = `${colSizeInterfix}${offset}`;
+      colClasses = colClass;
+      colOffset = colOff;
+    } else {
+      const colClass = getColumnSizeClass(isDesktop, colWidth, columnProp);
+      colClasses = colClass;
     }
+  });
+
+  if (!colClasses) {
+    colClasses = 'Col';
   }
-}
+
+  const classes = classNames(
+    className,
+    colClasses
+  );
+
+  switch (classes) {
+    case 'Col1': return <Col1 {...attributes} className={classes} offset={colOffset} />;
+    case 'Col2': return <Col2 {...attributes} className={classes} offset={colOffset} />;
+    case 'Col3': return <Col3 {...attributes} className={classes} offset={colOffset} />;
+    case 'Col4': return <Col4 {...attributes} className={classes} offset={colOffset} />;
+    case 'Col5': return <Col5 {...attributes} className={classes} offset={colOffset} />;
+    case 'Col6': return <Col6 {...attributes} className={classes} offset={colOffset} />;
+    case 'Col7': return <Col7 {...attributes} className={classes} offset={colOffset} />;
+    case 'Col8': return <Col8 {...attributes} className={classes} offset={colOffset} />;
+    case 'Col9': return <Col9 {...attributes} className={classes} offset={colOffset} />;
+    case 'Col10': return <Col10 {...attributes} className={classes} offset={colOffset} />;
+    case 'Col11': return <Col11 {...attributes} className={classes} offset={colOffset} />;
+    case 'Col12': return <Col12 {...attributes} className={classes} offset={colOffset} />;
+    case 'Col1Sm': return <Col1Sm {...attributes} className={classes} offset={colOffset} />;
+    case 'Col2Sm': return <Col2Sm {...attributes} className={classes} offset={colOffset} />;
+    case 'Col3Sm': return <Col3Sm {...attributes} className={classes} offset={colOffset} />;
+    case 'Col4Sm': return <Col4Sm {...attributes} className={classes} offset={colOffset} />;
+    case 'Col5Sm': return <Col5Sm {...attributes} className={classes} offset={colOffset} />;
+    case 'Col6Sm': return <Col6Sm {...attributes} className={classes} offset={colOffset} />;
+    case 'Col7Sm': return <Col7Sm {...attributes} className={classes} offset={colOffset} />;
+    case 'Col8Sm': return <Col8Sm {...attributes} className={classes} offset={colOffset} />;
+    case 'Col9Sm': return <Col9Sm {...attributes} className={classes} offset={colOffset} />;
+    case 'Col10Sm': return <Col10Sm {...attributes} className={classes} offset={colOffset} />;
+    case 'Col11Sm': return <Col11Sm {...attributes} className={classes} offset={colOffset} />;
+    case 'Col12Sm': return <Col12Sm {...attributes} className={classes} offset={colOffset} />;
+    default: return <Col1 {...attributes} className={classes} offset={colOffset} />;
+  }
+};
 
 Col.propTypes = propTypes;
 Col.defaultProps = defaultProps;
