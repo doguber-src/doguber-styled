@@ -6,6 +6,9 @@
       "type": "git",
       "url": "https://github.com/doguber-src/doguber-styled"
     },
+    "files": [
+        "./dist"
+    ],
     "dependencies": {
       "classnames": "^2.2.6",
       "prop-types": "^15.7.2",
