@@ -1,18 +1,13 @@
 {
     "presets": [
-        "react",
+      "react",
+      [
         "env",
-        "stage-0",
-        "es2015",
-    ],
-    "env": {
-        "production": {
-            "plugins": [
-                "transform-es2015-modules-commonjs"
-            ]
+        {
+          "modules": false
         }
-    },
-    "plugins": [
-        "transform-es2015-modules-commonjs"
+      ],
+      "stage-0",
     ]
-}
+  }
+  
