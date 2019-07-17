@@ -16,28 +16,26 @@ import {
   Col12,
 } from './StyledComponents';
 
-const colWidths = ['col', 'sm'];
-const stringOrNumberProp = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
+const colWidths = ['col'];
+// const stringOrNumberProp = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
 
-const columnProps = PropTypes.oneOfType([
-  PropTypes.bool,
-  PropTypes.number,
-  PropTypes.string,
-  PropTypes.shape({
-    size: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string]),
-    offset: stringOrNumberProp,
-  }),
-]);
+// const columnProps = PropTypes.oneOfType([
+//   PropTypes.bool,
+//   PropTypes.number,
+//   PropTypes.string,
+//   PropTypes.shape({
+//     size: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string]),
+//     offset: stringOrNumberProp,
+//   }),
+// ]);
 
 const propTypes = {
-  sm: columnProps,
   className: PropTypes.string,
   offset: PropTypes.number,
   widths: PropTypes.array,
 };
 
 const defaultProps = {
-  sm: null,
   className: null,
   offset: null,
   widths: colWidths,
@@ -47,7 +45,7 @@ const getColumnSizeClass = (isDesktop, colWidth, colSize) => {
   if (colSize === true || colSize === '') {
     return isDesktop ? 'Col' : `Col${colWidth}`;
   }
-  return isDesktop ? `Col${colSize}` : `Col${colSize}${colWidth === 'sm' && 'Sm'}`;
+  return isDesktop && `Col${colSize}`;
 };
 
 const Col = (props) => {
