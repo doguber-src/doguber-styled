@@ -17,25 +17,28 @@ import {
 } from './StyledComponents';
 
 const colWidths = ['col'];
-// const stringOrNumberProp = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
 
-// const columnProps = PropTypes.oneOfType([
-//   PropTypes.bool,
-//   PropTypes.number,
-//   PropTypes.string,
-//   PropTypes.shape({
-//     size: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string]),
-//     offset: stringOrNumberProp,
-//   }),
-// ]);
+const stringOrNumberProp = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
+
+const columnProps = PropTypes.oneOfType([
+  PropTypes.bool,
+  PropTypes.number,
+  PropTypes.string,
+  PropTypes.shape({
+    size: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string]),
+    offset: stringOrNumberProp,
+  }),
+]);
 
 const propTypes = {
+  col: columnProps,
   className: PropTypes.string,
   offset: PropTypes.number,
   widths: PropTypes.array,
 };
 
 const defaultProps = {
+  col: null,
   className: null,
   offset: null,
   widths: colWidths,
@@ -50,6 +53,7 @@ const getColumnSizeClass = (isDesktop, colWidth, colSize) => {
 
 const Col = (props) => {
   const {
+    col,
     className,
     offset,
     widths,
