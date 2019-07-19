@@ -23,10 +23,10 @@ const propTypes = {
 const defaultProps = {
   ...Transition.defaultProps,
   isOpen: false,
-  children: [],
+  children: null,
   className: null,
   navbar: false,
-  innerRef: [],
+  innerRef: null,
 };
 
 class Collapse extends Component {

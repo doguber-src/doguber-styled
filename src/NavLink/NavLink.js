@@ -14,7 +14,7 @@ const propTypes = {
 const defaultProps = {
   className: null,
   disabled: false,
-  innerRef: [],
+  innerRef: null,
   onClick: null,
   href: null,
 };
