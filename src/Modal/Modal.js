@@ -11,14 +11,12 @@ const propTypes = {
   onClose: PropTypes.func,
   show: PropTypes.bool,
   children: PropTypes.node,
-  title: PropTypes.string,
 };
 
 const defaultProps = {
   onClose: false,
   show: false,
   children: null,
-  title: null,
 };
 
 class Modal extends Component {
@@ -27,7 +25,6 @@ class Modal extends Component {
       onClose,
       show,
       children,
-      title,
       ...attributes
     } = this.props;
 
