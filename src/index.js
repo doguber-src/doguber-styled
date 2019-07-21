@@ -9,6 +9,7 @@ import NavItem from './NavItem';
 import NavLink from './NavLink';
 import Collapse from './Collapse';
 import Image from './Image';
+import Modal from './Modal';
 
 export {
   Container,
@@ -22,4 +23,5 @@ export {
   NavLink,
   Collapse,
   Image,
+  Modal,
 };
