@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import {
   StyledModal,
   StyledContent,
-  StyledOverlay,
-  StyledBody,
 } from './StyledComponents';
 
 const propTypes = {
@@ -35,8 +33,6 @@ class Modal extends Component {
       <StyledModal {...attributes}>
         <StyledContent>
           {children}
-          <StyledOverlay onClick={onClose} />
-          <StyledBody onClick={onClose} />
         </StyledContent>
       </StyledModal>
     );

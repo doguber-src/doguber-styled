@@ -6,26 +6,15 @@ export const StyledModal = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.3);
   padding: 50px;
-  z-index: 3;
+  z-index: 9999;
+  overflow-y: scroll;
 `;
 
 export const StyledContent = styled.div`
   background-color: white;
-  max-width: 500px;
+  max-width: 600px;
   min-height: 300px;
   margin: 0 auto;
 `;
-
-export const StyledOverlay = styled.div`
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-`;
-
-export const StyledBody = styled.div``;
