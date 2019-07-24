@@ -14,7 +14,7 @@ export const StyledModal = styled.div`
 
 export const StyledContent = styled.div`
   background-color: white;
-  max-width: 600px;
+  max-width: 700px;
   min-height: 300px;
   margin: 0 auto;
 `;
