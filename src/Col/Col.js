@@ -107,7 +107,7 @@ const Col = (props) => {
     case 'Col10': return <Col10 {...attributes} className={classes} offset={colOffset} />;
     case 'Col11': return <Col11 {...attributes} className={classes} offset={colOffset} />;
     case 'Col12': return <Col12 {...attributes} className={classes} offset={colOffset} />;
-    default: return <Col12 {...attributes} className={classes} offset={colOffset} />;
+    default: return <Col1 {...attributes} className={classes} offset={colOffset} />;
   }
 };
 
